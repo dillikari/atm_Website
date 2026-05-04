@@ -1,0 +1,44 @@
+<!-- widthdrawalamount.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/widthdrawalamount.css' %}">
+</head>
+<body>
+    <head>
+        <nav>
+            <div class="div1">
+                <h1>Central Bank</h1>
+            </div>
+            <div class="div2">
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="">About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </head>
+    <main>
+        <div class="div3">
+            <h1 class="hone">Central Bank of India</h1>
+        </div>
+        <div class="div4">
+            <form action="/widthdrawal/" method="post">
+                {% csrf_token %}
+                <table>
+                    <tr><th colspan="2">widthdrawal Amount</th></tr>
+                    <tr class="tr"><td>Account Number</td><td><input type="text" name="accno"></td></tr>
+                    <tr class="pinof"><td>Enter 4 Digit Pin</td><td><input type="text" name="pin"></td></tr>
+                    <tr class="pinof"><td>Enter Amount</td><td><input type="text" name="amt"></td></tr>
+                    <tr><td><input class="btn" type="submit" value="Submit"></td><td><input class="btn" type="reset" value="clear"></td></tr>
+                </table>
+            </form>
+            <h2 style="margin-top: 30px;">{{msg}}</h2>
+        </div>
+    </main>
+</body>
+</html>

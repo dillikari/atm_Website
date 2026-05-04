@@ -1,0 +1,44 @@
+<!-- deleteaccount.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/deleteaccount.css' %}">
+</head>
+<body>
+    <head>
+        <nav>
+            <div class="div1">
+                <h1>Central Bank</h1>
+            </div>
+            <div class="div2">
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="">About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </head>
+    <main>
+        <div class="div3">
+            <h1 class="hone">Central Bank of India</h1>
+        </div>
+        <div class="div4">
+            <form action="/deleteaccount/" method="post">
+                {% csrf_token %}
+                <table>
+                    <tr><th colspan="2">Delete Account</th></tr>
+                    <tr class="tr"><td>Account Number</td><td><input type="text" name="delete"></td></tr>
+                    <tr><td colspan="2"><h2 style="margin-top: 30px; background-color: white; color: black; width: 150px; margin-left: 125px; padding: 12px 7px;">{{request.session.code}}</h2></td></tr>
+                    <tr><td colspan="2"><input style="padding: 15px 7px; font-size: 30px;" type="text" placeholder="Enter captche" name="captche"></td></tr>
+                    <tr><td><input class="btn" type="submit" value="Delete Account"></td><td><input class="btn1" type="reset" value="clear"></td></tr>
+                </table>
+            </form>
+            <h2 style="margin-top: 50px;">{{msg}}</h2>
+        </div>
+    </main>
+</body>
+</html>

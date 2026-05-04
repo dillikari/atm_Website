@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <head>
+        <nav>
+            <div class="div1">
+                <h1>Central Bank</h1>
+            </div>
+            <div class="div2">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </head>
+    <main>
+        <div class="div3">
+            <h1 class="hone">Central Bank of India</h1>
+        </div>
+        <div class="div4">
+            <div class="div4A">
+                <a href="{% url 'accountcre' %}"><button>Create Account</button></a>
+                <a href="{% url 'delete' %}"><button>Delete Account</button></a>
+            </div>
+            <div class="div4B">
+                <a href="{% url 'widthdraw' %}"><button>Widthdrawal Amount</button></a>
+                <a href="{% url 'depositeamt' %}"><button>Deposite Amount</button></a>
+            </div>                
+            <div class="div4C">
+                <a href="{% url 'customerlist' %}"><button>List of Accounts</button></a>
+                <a href="{% url 'search' %}"><button>Search Account</button></a>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>
